@@ -2,21 +2,25 @@
 
 class Router{
     
-    public $routes = [];
-    
-    public function register($routes){
-        $this->routes = $routes;
+    public static $routes = [
+        "GET" => [],
+        "POST" => []
+    ];
+
+    public static function get($uri, $controller){
+        return self::$routes['GET'][$uri] = $controller;
     }
 
-    public static function load($fileName){
-        $routers = new Router;
-        require $fileName;
-        return $routers;
+    public static function post($uri, $controller){
+        return self::$routes['POST'][$uri] = $controller;
     }
 
-    public function direct($uri){
-        if(array_key_exists($uri, $this->routes)){
-            return $this->routes[$uri];
+    public static function direct($uri, $method){
+        if(array_key_exists($uri, self::$routes[$method])){
+            return self::$routes[$method][$uri];
+        }
+        else{
+            print_r('404 Not found');
         }
     }
 }
