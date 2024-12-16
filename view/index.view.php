@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+<?php require "Partials/header.php" ?>
     
-    <ul>
+<ul>
     <h3>Home Page</h3>
         <?php foreach($tasks as $task): ?>
             <?php 
@@ -19,6 +13,6 @@
                 }     
             ?>
         <?php endforeach ?>
-    </ul>
-</body>
-</html>
+</ul>
+
+<?php require "Partials/footer.php" ?>
