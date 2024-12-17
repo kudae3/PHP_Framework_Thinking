@@ -1,4 +1,7 @@
 <?php
 
-var_dump($_REQUEST['username']);    
-dd($_SERVER['REQUEST_METHOD']);
+$db->create([
+    'name' => $_POST['username'] // Need to be real column name
+], "users");
+
+header('Location: /contact');

@@ -15,4 +15,10 @@
         <?php endforeach ?>
 </ul>
 
+<h3>Create New Todo</h3>
+<form action="task" method="post">
+    <input type="text" name="task" id="">
+    <button type="submit">Add</button>
+</form>
+
 <?php require "Partials/footer.php" ?>

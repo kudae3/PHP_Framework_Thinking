@@ -1,4 +1,4 @@
 <?php
     
-    $tasks = $query->all('task');
+    $tasks = $db->all('task');
     require "view/index.view.php";
