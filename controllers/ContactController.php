@@ -1,4 +1,6 @@
 <?php
 
-$users = $db->all('users');
-require "view/Contact.view.php";
+$users = App::get('database')->all('users');
+view('contact', [
+    'users' => $users
+]);

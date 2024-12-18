@@ -6,7 +6,7 @@ require "core/database/QueryBuilder.php";
 require "Router.php";
 require "core/request.php";
 require "routes.php";
+require "App.php";
 
-$config = require "config.php";
-$pdo = Connection::make($config['database']);
-$db = new QueryBuilder($pdo);
+App::bind('config', require "config.php");
+App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));
