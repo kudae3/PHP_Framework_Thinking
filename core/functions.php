@@ -9,3 +9,16 @@ function view(String $name, $data=[]){
     return require "view/$name.view.php";
 }
 
+function redirect(String $uri){
+    header("Location: $uri");
+}
+
+function request($key){
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        return $_POST[$key];
+    }
+    if($_SERVER['REQUEST_METHOD'] === 'GET'){
+        return $_GET[$key];
+    }
+}
+

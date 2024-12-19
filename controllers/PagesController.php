@@ -22,18 +22,18 @@ class PagesController {
 
     public function handleName(){
         App::get('database')->create([
-            'name' => $_POST['username'] // Need to be real column name
+            'name' => request('username') // Need to be real column name
         ], "users");
         
-        header('Location: /contact');
+        redirect('contact');
     }
 
     public function handleTask(){
         App::get('database')->create([
-            'description' => $_POST['task'],
+            'description' => request('task'),
             'complete' => false
         ], 'task');
         
-        header('Location: /');
+        redirect('/');
     }
 }
