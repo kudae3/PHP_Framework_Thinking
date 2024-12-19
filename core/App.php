@@ -1,5 +1,5 @@
 <?php
-
+namespace core;
 class App{
     public static $datas = [];
     public static function bind(String $key, $value){

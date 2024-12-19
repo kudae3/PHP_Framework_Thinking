@@ -1,5 +1,8 @@
 <?php
 
+use core\App;
+
+
 require "functions.php";
 require "routes.php";
 
